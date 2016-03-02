@@ -1,0 +1,26 @@
+body {background-color: #000;margin: 0px}
+header{font-size: 1.5em;margin: 0px;height:50px;width:1300px;text-align: center;}
+span {color: #fff;font-family: '微软雅黑'}
+ul{margin-top: 10px;margin-bottom: 10px}
+a {cursor:pointer;}
+table{text-align: center}
+.title{font-weight: bold;color: #fff;font-family: '微软雅黑'}
+.cell{color: #fff;font-family: '微软雅黑'}
+#system{float:left;height: 50px}
+#now{margin:auto;height:50px;}
+#uptime{float:right;height:50px}
+#top{width:1300px;height:700px;}
+#cpu{float:left;width:1300px;height:200px;margin-bottom: 5px}
+#cpuinfo{width:200px;height: 200px;float:left;}
+#cpucanvas{margin-right: 50px;float:left;border:#fff 1px solid;}
+#cpuright{float:left;border:#fff 1px solid;}
+#sensors{float:left;width:600px;height:200px;margin-bottom: 20px}
+#mem{float:left;width:600px;height:200px;margin-right: 100px;margin-bottom: 20px}
+#disk{float:left;width:230px;height:250px;margin-right: 12.5px;margin-left: 12.5px;text-align: center}
+#fs{float:left;width:450px;height:250px;margin-right: 12.5px;margin-left: 12.5px;text-align: center}
+#swap{float:left;width:150px;height:250px;margin-right: 12.5px;margin-left: 12.5px;text-align: center;}
+#net{float:left;width:300px;height:250px;margin-right: 12.5px;margin-left: 12.5px;text-align: center}
+.info{float:left;width:200px;height:100%;}
+#memcanvas,#sensorscanvas{float:left;border:solid #fff 1px;}
+.choosed{background-color: rgb(50,50,50)}
+.head{font-size:20px;}

@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="status.css">
+<script type="text/javascript" src="tool.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="status.js"></script>
+</head>
+<body>
+	<header id ="header">
+		<div id="system"></div>
+		<div id ="uptime"></div>
+		<div id="now"></div>
+	</header>
+	<div id="top">
+		<div id ="cpu">
+			<div id="cpuinfo"></div>
+			<canvas id = "cpucanvas" width = "500px" height = "200px"></canvas>
+			<canvas id = "cpuright" width = "500px" height = "200px"></canvas>
+		</div>
+		<div id ="mem">
+			<div id = "meminfo" class="info"></div>
+			<canvas id = "memcanvas" width = '398px' height='200px'></canvas>
+		</div>
+		<div id ="sensors">
+			<div id="sensorsinfo" class = "info"></div>
+			<canvas id="sensorscanvas" width = '398px' height = '200px'></canvas>
+		</div>
+		<div id ="disk"></div>
+		<div id= "fs"></div>
+		<div id="swap"></div>
+		<div id="net"></div>
+	</div>
+	<div id="bottom"></div>	
+</body>
+</html>

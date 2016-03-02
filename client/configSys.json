@@ -1,0 +1,30 @@
+{
+	"tasks":[{
+			"require":"./mainStruct.js",
+			"end":"mainStructEnd",
+			"rank":0
+		},{
+			"require":"./sysInfo.js",
+			"end":"sysInfo",
+			"rank":0
+		}],
+	"logManager":[{
+			"require":"./logmanager/disklog.js",
+			"end":"diskInfo",
+			"rank":1
+		},{
+			"require":"./logmanager/netlog.js",
+			"end":"netInfo",
+			"rank":3
+		},{
+			"require":"./logmanager/statlog.js",
+			"end":"statlog",
+			"rank":0
+		},{
+			"require":"./logmanager/processlog.js",
+			"end":"processInfo",
+			"rank":1
+		}],
+	"logUpdateTime":1000,
+	"dataPushTime":1000
+}
