@@ -6,7 +6,7 @@ var groupControl = {};
 var heartTime,lastSensorsListener,lastCpuListener;
 var cpudata,percpudata;
 function getData(){
-$.get('../jobmaker.js',function(data){
+$.get('/jobmaker',function(data){
 	data = JSON.parse(data);
 	data = data[0].data;
 	cpudata = data.cpu;
@@ -153,6 +153,7 @@ $.get('../jobmaker.js',function(data){
 	}
 	lastSensorsListener = listener(sensor,sensorCtx,sensorsInfo[groupControl.sensorsLast]);
 	//disk
+	/*
 	content = "";
 	content += "<span class='title head'>DISK</br></span>";
 	content += "<table><thead><tr class='title'><td>read_byte</td><td>write_byte</td><td>disk_name</td></tr></thead><tbody>";
@@ -161,6 +162,7 @@ $.get('../jobmaker.js',function(data){
 	}
 	content +="</tbody></table>";
 	$("#disk").append(content);
+	*/
 	//fs
 	content = "";
 	content += "<span class='title head'>FS</br></span>";

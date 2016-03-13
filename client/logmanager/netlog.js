@@ -1,10 +1,11 @@
+var fs = require('fs'),
       toolFunc = require('../sysFunc.js'),
       myDate = new Date();
 /*+++++++网络信息日志文件++++++++++
 line1:日志更新时间
 网卡名：接受字节(开机至日志更新时刻)，发送字节(开机至日志更新时刻)，累计接收字节，累计发送字节
 ++++++++++++++++++++++++++++++++*/
-exports.netInfo = new Promise(function(resolve,reject)	
+exports.netInfo = new Promise(function(resolve,reject){	
 fs.exists('./logmanager/net.log',function(exists){
 	if(!exists){
 		//如果没有网络信息日志，首先初始化日志文件
@@ -104,7 +105,7 @@ fs.exists('./logmanager/net.log',function(exists){
 					console.log('net updated');
 						resolve();
 				});
-			});
+			})
 		},function(){
 			//err control
 		});

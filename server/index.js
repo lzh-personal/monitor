@@ -17,15 +17,19 @@ if(cluster.isMaster){
 	});
 	app.listen(8888);
 	app.get('/jobmaker', function (req, res) {
-  		res.send('Hello World!');
+		var result = [];
+  		cache.forEach(function(v){
+  			result.push(v);
+  		})
+  		res.send(JSON.stringify(result));
 	});
 	app.use(express.static('html'));
 	//启动worker进程，并监听message事件
 	var worker = cluster.fork();
 	worker.on('message',function(msg){
 	//处理收到的数据
-		console.log(msg);
-
+		var data = JSON.parse(msg);
+		cache.set(data[0],data[1]);
 	})
 }else if(cluster.isWorker){
 /******************************************
@@ -36,8 +40,8 @@ if(cluster.isMaster){
 	var server = net.createServer(function(socket){
 	socket.on('data',function(data){
 		//处理收集到的数据并将数据传送给master进程
-		console.log(socket.remoteAddress);
-		process.send(data.toString());
+		console.log(data.toString());
+		process.send('["'+socket.remoteAddress+'",{"ip":"'+socket.remoteAddress+'","data":'+data.toString()+'}]');
 	});
 	socket.on('end',function(){
 		console.log('connection discontected');

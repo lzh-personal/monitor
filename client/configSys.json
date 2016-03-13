@@ -15,11 +15,11 @@
 		},{
 			"require":"./logmanager/netlog.js",
 			"end":"netInfo",
-			"rank":3
+			"rank":1
 		},{
 			"require":"./logmanager/statlog.js",
 			"end":"statlog",
-			"rank":0
+			"rank":2
 		},{
 			"require":"./logmanager/processlog.js",
 			"end":"processInfo",

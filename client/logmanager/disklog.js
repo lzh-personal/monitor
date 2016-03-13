@@ -132,7 +132,7 @@ exports.diskInfo = new Promise(function(resolve,reject){
 				console.log('disk.log saved');
 				return new Promise(function(resolve,reject){
 						resolve();
-					});
+					})
 			});
 		});
 	}

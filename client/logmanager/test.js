@@ -21,7 +21,5 @@ s.on('end',function(){
 	console.log(dis.final('base64'));
 })
 */
-var x = 0;
-while(1){
-	++x;
-}
+exports.testLZH = "LZH";
+console.log("ININININ");

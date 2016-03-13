@@ -18,7 +18,7 @@ new Promise(function(resolve,reject){
 })
 .then(function(){
 	return new Promise(function(resolve,reject){
-		cp.exec("sudo node ./logmanager/logManager.js",function(err){
+		cp.exec("sudo node ./logmanager/logManager.js -f",function(err){
 			//开机第一次运行会初始化相关日志参数，但生成的不是可使用的监控日志
 				if(err) reject(err);
 				resolve();
@@ -73,7 +73,6 @@ new Promise(function(resolve,reject){
 			client.on('connect',function(){
 				cp.exec("node ./dataCollector/taskManager.js",function(err,stdout,stderr){
 				if(err) reject(err);
-				console.log(client);
 				stdout = new Buffer(stdout);
 				client.write(stdout);
 				client.end();

@@ -96,6 +96,11 @@ objectManager.prototype = {
 	getList:function(key){
 		//get the ele in keylist by this key
 		return this.keylist[this.data[key].key];
+	},
+	forEach:function(fn){
+		for(var x in this.data){
+			fn.apply(this,[this.data[x].value,x,this.data]);
+		}
 	}
 };
 exports.objectManager = objectManager;

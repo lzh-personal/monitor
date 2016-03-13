@@ -35,7 +35,7 @@ exports.timeControl = function(path,callback){
 	});
 }
 exports.tasks = function(name,callback){
-	var logsTask = task[name],
+	var logsTask = typeof name === "string"?task[name]:name,
 		endTasks = [],
 		/*  任务执行迭代器  */
 		runTasks = function*(endTasks){
@@ -59,8 +59,8 @@ exports.tasks = function(name,callback){
 			while(1){
 				if(subTasks){
 					Promise.all(subTasks).then(function(value){
-						//console.log(subTasks)
-						//console.log(run.next().value);
+						//console.log(run.next());
+						//console.log(run);
 						run.next().value;
 						console.log('this turn subTasks finished!');
 					},function(value){
@@ -73,12 +73,14 @@ exports.tasks = function(name,callback){
 			}
 		}
 	;
+
 	//初始化任务数组为一个二维数组
 	logsTask.forEach(function(v){
 		v.rank = isNaN(+v.rank)?0:+v.rank;
 		endTasks[v.rank] = endTasks[v.rank]||new Array();
 		endTasks[v.rank].push(v);
 	});
+	console.log(endTasks);
 	/*
 	run 和 rec两个迭代其相互嵌套，要想运行其中的一个，都需要初始化两个迭代器
 	但是rec迭代器需要run执行之后的输入

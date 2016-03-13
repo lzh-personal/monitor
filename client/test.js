@@ -12,7 +12,7 @@
             }));
         });
 */
-
+/*
 function* anotherGenerator(i) {
 while(1){
   var value = yield ++i;
@@ -27,4 +27,8 @@ console.log(gen.next().value);
 console.log(gen.next().value);
 console.log(gen.next(0).value);
 console.log(gen.next());
-
+*/
+var fs = require("./logmanager/test.js");
+setTimeout(function(){
+    require("./logmanager/test.js");
+},1000);
